@@ -1,6 +1,7 @@
 package com.aplicacion.tunicapp.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -26,8 +27,14 @@ fun AppNavigation() {
             UserMainSpace()
         }
         composable(AppScreens.AdminMainSpace.route) {
-            AdminMainSpace(navController)
+            AdminMainSpace()
         }
+    }
+}
+
+@Composable
+fun AdminNavigation(navigator: NavHostController) {
+    NavHost(navigator, startDestination = NavigationItem.Noticias.route) {
         composable(AppScreens.Noticias.route) {
             NoticiasScreen()
         }
