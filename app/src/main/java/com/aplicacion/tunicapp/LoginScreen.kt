@@ -10,7 +10,9 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.TextFieldValue
@@ -19,25 +21,17 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.aplicacion.tunicapp.navigation.AppScreens
 import com.aplicacion.tunicapp.ui.theme.Shapes
+import com.aplicacion.tunicapp.ui.theme.blueApp
 
 @Composable
 fun LoginScreen(navigator: NavHostController) {
     Column(
-        Modifier
-            .padding(80.dp)
-            .fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Top
-    ) {
-        Logo()
-    }
-    Column(
         modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp),
+            .fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        Logo()
         UserField()
         PasswordField()
         LoginButton(navigator)
@@ -50,9 +44,10 @@ fun Logo() {
         painter = painterResource(id = R.drawable.logo_perdon),
         contentDescription = "logo_splash_screen",
         modifier = Modifier
+            .padding(80.dp)
             .clip(Shapes.medium)
-            .height(200.dp)
-            .width(200.dp),
+            .height(250.dp)
+            .width(250.dp),
     )
 }
 
@@ -63,6 +58,7 @@ fun UserField() {
     }
     OutlinedTextField(
         value = text,
+        modifier = Modifier.padding(vertical = 12.dp),
         label = { Text(text = "DNI") },
         singleLine = true,
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
@@ -89,6 +85,7 @@ fun PasswordField() {
     }
     OutlinedTextField(
         value = password,
+        modifier = Modifier.padding(vertical = 12.dp),
         onValueChange = { password = it },
         label = { Text("Contraseña") },
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),//2
@@ -112,8 +109,12 @@ fun PasswordField() {
 fun LoginButton(navigator: NavHostController) {
     TextButton(
         onClick = { navigator.navigate(AppScreens.MainSpace.route) },
-        modifier = Modifier.padding(vertical = 16.dp),
+        modifier = Modifier
+            .padding(vertical = 48.dp)
+            .width(280.dp)
+            .height(56.dp),
+        colors = ButtonDefaults.textButtonColors(backgroundColor = blueApp)
     ) {
-        Text(text = "Entrar")
+        Text(text = "Acceder", fontWeight = FontWeight.W700, color = Color.White)
     }
 }
