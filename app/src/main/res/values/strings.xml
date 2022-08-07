@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">tunicApp</string>
+    <string name="dni">DNI</string>
+    <string name="introduce_DNI">Introduce tu DNI</string>
+    <string name="password">Contraseña</string>
+    <string name="ocultar_password">Ocultar contraseña</string>
+    <string name="mostrar_password">Revelar contraseña</string>
+    <string name="acceder">Acceder</string>
+    <string name="panel_admin">Panel de administración</string>
 </resources>

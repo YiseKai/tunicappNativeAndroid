@@ -1,4 +1,4 @@
-package com.aplicacion.tunicapp.ui.theme
+package com.aplicacion.tunicapp.login
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -13,6 +13,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.aplicacion.tunicapp.R
 import com.aplicacion.tunicapp.navigation.AppScreens
+import com.aplicacion.tunicapp.ui.theme.Shapes
 import kotlinx.coroutines.delay
 
 @Composable

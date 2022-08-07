@@ -1,4 +1,4 @@
-package com.aplicacion.tunicapp
+package com.aplicacion.tunicapp.login
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -19,6 +20,7 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.aplicacion.tunicapp.R
 import com.aplicacion.tunicapp.navigation.AppScreens
 import com.aplicacion.tunicapp.ui.theme.Shapes
 import com.aplicacion.tunicapp.ui.theme.blueApp
@@ -59,7 +61,7 @@ fun UserField() {
     OutlinedTextField(
         value = text,
         modifier = Modifier.padding(vertical = 12.dp),
-        label = { Text(text = "DNI") },
+        label = { Text(text = stringResource(R.string.dni)) },
         singleLine = true,
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
         trailingIcon = {
@@ -68,7 +70,7 @@ fun UserField() {
                 contentDescription = "icon_person"
             )
         },
-        placeholder = { Text(text = "Introduce tu DNI") },
+        placeholder = { Text(text = stringResource(R.string.introduce_DNI)) },
         onValueChange = { newText ->
             text = newText
         },
@@ -87,7 +89,7 @@ fun PasswordField() {
         value = password,
         modifier = Modifier.padding(vertical = 12.dp),
         onValueChange = { password = it },
-        label = { Text("Contraseña") },
+        label = { Text(stringResource(R.string.password)) },
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),//2
         singleLine = true,
         visualTransformation =
@@ -98,7 +100,7 @@ fun PasswordField() {
                     if (hidden) R.drawable.ic_baseline_visibility_24
                     else R.drawable.ic_baseline_visibility_off_24
                 )
-                val description = if (hidden) "Ocultar contraseña" else "Revelar contraseña" //6
+                val description = if (hidden) stringResource(R.string.ocultar_password) else stringResource(R.string.mostrar_password) //6
                 Icon(painter = vector, contentDescription = description)
             }
         }
@@ -108,13 +110,13 @@ fun PasswordField() {
 @Composable
 fun LoginButton(navigator: NavHostController) {
     TextButton(
-        onClick = { navigator.navigate(AppScreens.MainSpace.route) },
+        onClick = { navigator.navigate(AppScreens.AdminMainSpace.route) },
         modifier = Modifier
             .padding(vertical = 48.dp)
             .width(280.dp)
             .height(56.dp),
         colors = ButtonDefaults.textButtonColors(backgroundColor = blueApp)
     ) {
-        Text(text = "Acceder", fontWeight = FontWeight.W700, color = Color.White)
+        Text(text = stringResource(R.string.acceder), fontWeight = FontWeight.W700, color = Color.White)
     }
 }
