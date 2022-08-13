@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "699273491821",
+    "project_id": "tunicapp-2022",
+    "storage_bucket": "tunicapp-2022.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:699273491821:android:df0efcae6e3b2123429664",
+        "android_client_info": {
+          "package_name": "com.aplicacion.tunicapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "699273491821-o5errvv2ohfe44i7bc58td2uir72uhc3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBemUiKGCIipvmae3k8XUeCwkCFRGmmvDo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "699273491821-o5errvv2ohfe44i7bc58td2uir72uhc3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
